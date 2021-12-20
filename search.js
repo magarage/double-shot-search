@@ -77,8 +77,8 @@ function onload(e) {
 const shopPrefix = "shop ";
 $( document ).ready(function() {
     resize();
-    let left = "https://www.bing.com/search?ds=1&q=";
-    let right = "https://www.google.com/search?ds=1&q=";
+    let left = "https://www.google.com/search?ds=1&q=";
+    let right = "https://search.naver.com/search.naver?ds=1&query=";
     var url = $.url();
     var query = url.param("q");
     if (typeof query != 'undefined')
@@ -86,7 +86,7 @@ $( document ).ready(function() {
         if (query.toLowerCase().indexOf(shopPrefix) === 0) {
             query = query.substr(shopPrefix.length);
             left = left.replace("search?", "shop?");
-            right = right.replace("search?", "search?psb=1&tbm=shop&");
+            right = "https://search.shopping.naver.com/search/all?query=";
         }
         $("#left").load(onload);
         $("#right").load(onload);
